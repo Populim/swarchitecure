@@ -1,17 +1,16 @@
 @startuml C4_Elements
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
 
-
-System_Boundary(context,"Context"){
+System_Boundary(robot_context,"Robot Context"){
     
-
-    Container(master1,"Master")
-    Container(robot1,"Robot")
-    Container(motordriver1,"Motor Driver")
-
-    Rel(master1,robot1,"Envia comandos")
-    Rel(robot1,master1,"Manda informações")
-    Rel(robot1,motordriver1,"Controla")
+    Component(statusUpdater,"Status Updater")
+    Component(robotServer,"Robot Server")
+    Component(trayController,"Tray Controller")
+    Component(marvelmindWrapper,"Marvelmind Wrapper")
+    Component(cameraTracker,"Camera Tracker")
+    Component(robotController,"Robot Controller")
+    
+    
 }
 
 
