@@ -1,18 +1,13 @@
 @startuml C4_Elements
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
-
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
 
 System_Boundary(context,"Context"){
     
     Person(user1,"Usuário")
-    Container(master1,"Master")
-    Container(robot1,"Robot")
-    Container(motordriver1,"Motor Driver")
+    System(dominoRobot,"Domino Robot System")
 
-    Rel(user1,master1,"Usa")
-    Rel(master1,robot1,"Envia comandos")
-    Rel(robot1,master1,"Manda informações")
-    Rel(robot1,motordriver1,"Controla")
+    Rel(user1,dominoRobot,"Usa")
+
 }
 
 @enduml
