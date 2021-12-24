@@ -1,0 +1,55 @@
+@startuml C4_Elements
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+Container_Ext(master1,"Master")
+Container_Ext(motordriver1,"Motor Driver", " ")
+
+
+Container_Boundary(robot_context,"Robot Context"){
+    Component(statusUpdater,"Status Updater","C++ class")
+    Component(robotServer,"Robot Server","C++ class")
+    Component(trayController,"Tray Controller","C++ class")
+    Component(marvelmindWrapper,"Marvelmind Wrapper","C++ class")
+    Component(cameraTracker,"Camera Tracker","C++ class")
+    Component(robotController,"Robot Controller","C++ class")
+
+    Rel(robotServer,trayController," Controla ", )
+
+    Rel(robotServer,robotController," Controla ")
+
+    Rel_U(robotServer,statusUpdater,"Mantém o Status e o retorna ")
+
+    Rel_R(robotServer,cameraTracker," Recebe imagens do  ")
+
+    Rel_L(robotServer,marvelmindWrapper," Recebe posições do ")
+
+
+}
+
+
+
+BiRel(master1,robotServer," Robô envia dados e Master envia comandos ")
+
+Rel(robotController,motordriver1," Controla a movimentação")
+
+
+Rel(trayController,motordriver1," Controla o colocamento de dominós")
+
+
+
+
+
+@enduml
+
+
+
+
+
+
+
+
+
+
+
+
