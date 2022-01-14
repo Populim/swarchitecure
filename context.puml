@@ -1,7 +1,7 @@
 @startuml C4_Elements
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
 
-System_Boundary(context,"Context"){
+System_Boundary(context,"Lego Robot Context"){
     
     Person(user1,"Usuário")
     System(dominoRobot,"Domino Robot System")

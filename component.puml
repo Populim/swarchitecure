@@ -6,23 +6,24 @@ Container_Ext(master1,"Master")
 Container_Ext(motordriver1,"Motor Driver", " ")
 
 
-Container_Boundary(robot_context,"Robot Context"){
+Container_Boundary(robot_context,"Lego Robot Container"){
     Component(statusUpdater,"Status Updater","C++ class")
+    Component(robot,"Robot","C++ class")
     Component(robotServer,"Robot Server","C++ class")
     Component(trayController,"Tray Controller","C++ class")
     Component(marvelmindWrapper,"Marvelmind Wrapper","C++ class")
     Component(cameraTracker,"Camera Tracker","C++ class")
     Component(robotController,"Robot Controller","C++ class")
 
-    Rel(robotServer,trayController," Controla ", )
+    Rel(robot,trayController," Controla ", )
 
-    Rel(robotServer,robotController," Controla ")
+    Rel(robot,robotController," Controla ")
 
-    Rel_U(robotServer,statusUpdater,"Mantém o Status e o retorna ")
+    Rel_U(robot,statusUpdater,"Mantém o Status e o retorna ")
 
-    Rel_R(robotServer,cameraTracker," Recebe imagens do  ")
+    Rel_R(robot,cameraTracker," Recebe imagens do  ")
 
-    Rel_L(robotServer,marvelmindWrapper," Recebe posições do ")
+    Rel_L(robot,marvelmindWrapper," Recebe posições do ")
 
 
 }
@@ -30,6 +31,10 @@ Container_Boundary(robot_context,"Robot Context"){
 
 
 BiRel(master1,robotServer," Robô envia dados e Master envia comandos ")
+
+
+BiRel(robotServer,robot," Troca informações")
+
 
 Rel(robotController,motordriver1," Controla a movimentação")
 

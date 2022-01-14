@@ -1,21 +1,16 @@
 @startuml C4_Elements
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
 
-Container_Boundary(robot_context,"Robot Context"){
-    
-    
-    Container(master1,"Motor Driver")
+Container_Boundary(robot_context,"Lego Robot Containers"){
+        
+    Container(master1,"Master Laptop")
     Container(robot1,"Robot")
     Container(motordriver1,"Motor Driver")
-
 
     Rel(master1,robot1,"Envia comandos")
     Rel(robot1,master1,"Responde com informações")
     Rel(robot1,motordriver1,"Controla")
     
 }
-
-
-
 
 @enduml
