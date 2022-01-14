@@ -3,9 +3,9 @@
 
 Container_Boundary(robot_context,"Lego Robot Containers"){
         
-    Container(master1,"Master Laptop")
-    Container(robot1,"Robot")
-    Container(motordriver1,"Motor Driver")
+    Container(master1,"Master","Faz interface com o usuário, executado no Laptop")
+    Container(robot1,"Robot","Controlador geral do robô, executado num Raspberry Pi")
+    Container(motordriver1,"Motor Driver","Controlador de movimento e I/O de dispositivos eletrônicos, executado num Teknic ClearCore.")
 
     Rel(master1,robot1,"Envia comandos")
     Rel(robot1,master1,"Responde com informações")

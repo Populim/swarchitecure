@@ -2,8 +2,8 @@
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
 
-Container_Ext(master1,"Master")
-Container_Ext(motordriver1,"Motor Driver", " ")
+Container_Ext(master1,"Master","Faz interface com o usuário, executado no Laptop")
+Container_Ext(motordriver1,"Motor Driver","Controlador de movimento e I/O de dispositivos eletrônicos, executado num Teknic ClearCore.")
 
 
 Container_Boundary(robot_context,"Lego Robot Container"){
